@@ -1,0 +1,79 @@
+<!--
+    FEND Neighborhood Exploration Project
+    Find good coffee near you, or anywhere for that matter!
+  -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Coffee Finder">
+    <meta name="author" content="Sean Krinik">
+    <title>I N E E D C O F F E E</title>
+
+    <link rel="stylesheet" href="css/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.min.css">
+    <link rel="shortcut icon" href="img/favicon.ico">
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-12 col-sm-8 col-sm-push-4 no-padding">
+          <div id="map"></div>
+          <img src="img/PBFoursquare.svg" class="fsq-logo" onerror="this.src='img/PBFoursquare-2x.png'"  alt="foursquare logo">
+        </div>
+        <div class="col-xs-12 col-sm-4 col-sm-pull-8 no-padding">
+          <div class="options-box">
+            <div class="input-group">
+              <img src="img/inc.svg" class="img-responsive ineedcoffee" onerror="this.src='img/inc.png'" alt="I Need Coffee logo">
+              <h2 class="search">Search:</h2>
+              <img src="img/thuglifeglasses.png" data-bind="fadeVisible: hipsterToggle()" class="thuglyfe-glasses hipster-mode" alt="hipster mode activated"/>
+              <input class="form-control search-bar" type="text" data-bind="value: userDefLocation" placeholder="Zip code or city..." />
+              <div class="list-box">
+                <ul data-bind="visible: hipsterToggle, foreach: hipsterShops" class="scroll">
+                  <li data-bind="click: function(){google.maps.event.trigger($data, 'click')}">
+                    <span data-bind="text: title"></span>
+                  </li>
+                </ul>
+                <ul data-bind="visible: !hipsterToggle(), foreach: coffeeShops" class="scroll">
+                  <li data-bind="click: function(){google.maps.event.trigger($data, 'click')}">
+                    <span data-bind="text: title"></span>
+                  </li>
+                </ul>
+              </div>
+              <hr />
+              <div class="button-bar">
+                <button data-bind="click: function() {deleteMarkers(); findMe()}" class="btn btn-info" type="button">Find Me</button>
+                <div class="dropup">
+                  <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Distance:
+                    <span class="caret"></span>
+                  </button>
+                  <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                    <li><a data-bind="click: function() {clearMarkers(); walkingDistance(); if(hipsterToggle()){setHipsterMarkers();}else{setAllMarkers();}}" class="drop-item" href="#">Walking (&lt; 1mi)</a></li>
+                    <li><a data-bind="click: function() {clearMarkers(); anyDistance(); if(hipsterToggle()){setHipsterMarkers();}else{setAllMarkers();}}" class="drop-item" href="#">Any Distance within 5 miles.</a></li>
+                  </ul>
+                </div>
+              </div>
+              <hr />
+              <div class="button-bar">
+                <button data-bind="click: function(){hipsterify(); clearMarkers(); setHipsterMarkers()}" class="btn btn-success" type="button">Hipsterify</button>
+                <button data-bind="click: function(){unhipsterify(); clearMarkers(); setAllMarkers()}" class="btn btn-danger" type="button">UN-Hipsterify</button>
+            </div>
+            </div>
+            <hr />
+            <p class="footer-info">Hipster mode gets rid of large chains with lame coffee. Drink local! <br />* Thug glasses will display when in hipster mode. *</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Scripts Load -->
+    <script src='js/jquery-3.2.0.min.js'></script>
+    <script src='js/knockout-3.4.2.js'></script>
+    <script src='js/app.min.js'></script>
+    <!-- load google maps with jquery to use fail catch method. -->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCr4dy4eMeF-wwSDGeeWhbzWlgb9d-hTak&v3&callback=initMap" onerror="mapsLoadError()"></script>
+    <!-- bootstrap js -->
+    <script src='js/bootstrap.min.js'></script>
+  </body>
+</html>

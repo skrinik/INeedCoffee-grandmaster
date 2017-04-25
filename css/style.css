@@ -1,0 +1,188 @@
+/* Element Styles */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+a,
+span {
+  color: white;
+}
+
+li:hover {
+  cursor: pointer;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 5px;
+}
+
+li {
+  border: solid white .5px;
+  border-radius: 2px;
+  margin-bottom: 4px;
+  font-size: 1.25em;
+}
+
+hr {
+  margin: 10px 5px;
+}
+
+/* Class Styles */
+
+.fsq-logo {
+  width: 150px;
+  position: absolute;
+  bottom: 25px;
+  left: 5px;
+  z-index: 1000;
+  pointer-events: none;
+}
+
+.input-group-btn {
+  float: right;
+}
+
+.list-box {
+  padding-right: 10px;
+  height: 60vh;
+  overflow: scroll;
+}
+
+.dropup {
+  display: inline-block;
+  text-align: center;
+}
+
+ul.dropdown-menu {
+  left: -100px;
+}
+
+.footer-info {
+  font-size: .75em;
+  text-align: center
+}
+
+p.footer-info {
+  margin: 5px auto;
+}
+
+.drop-item {
+  font-size: .75em;
+  font-weight: 400;
+}
+
+.button-bar {
+  text-align: center;
+}
+
+.hipster-mode {
+  display: inline;
+  top: 10px;
+  right: 10px;
+}
+
+.no-padding {
+  padding: 0;
+}
+
+.thuglyfe-glasses {
+  max-width: 75px;
+  position: absolute;
+  z-index: 100;
+}
+
+.scroll {
+  overflow: scroll;
+}
+
+/* ID Styles */
+
+#map {
+  height: 100vh;
+  padding: 0;
+  z-index: 1;
+}
+
+.ineedcoffee {
+  display: inline;
+  max-width: 75px;
+  margin: auto 5px;
+}
+
+.search {
+  display: inline-block;
+  margin: auto;
+  text-align: center;
+}
+
+.options-box {
+  height: 100vh;
+  background-color: #444;
+  border: solid 2px #aaa;
+  border-radius: 4px;
+  padding: 5px;
+  overflow: scroll;
+}
+
+/* InfoWindow Styles */
+
+.text-success {
+  color: green !important;
+}
+
+.text-danger {
+  color: red !important;
+}
+
+.content {
+  text-align: center;
+  color: black;
+}
+
+div.content > p {
+  color: black;
+  margin: 5px auto;
+}
+
+.fsq-link {
+  color: black;
+  font-weight: 400;
+  text-decoration: underline;
+}
+
+.fsq-link:hover {
+  color: #aaa;
+}
+
+.title {
+  color: black !important;
+  font-size: 1em;
+  font-weight: 600;
+}
+
+/* End InfoWindow Styles */
+
+@media screen and (max-width: 767px) {
+  #map {
+    height: 50vh;
+  }
+
+  .options-box {
+    height: 50vh;
+  }
+
+  .list-box {
+    height: 25vh;
+    overflow: scroll;
+  }
+}
