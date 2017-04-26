@@ -1,4 +1,4 @@
-# I N E E D C O F F E E ![I NEED COFFEE](https://github.com/skrinik/INeedCoffee-grandmaster/tree/master/img/inc-75w.png "I N E E D C O F F E E Logo")
+# I N E E D C O F F E E ![I NEED COFF](https://github.com/skrinik/INeedCoffee-grandmaster/blob/master/img/inc-75w.png?raw=true "I N E E D C O F F E E Logo")
 ## A web application to find coffee shops near you.
 #### Author: Sean Krinik
 
