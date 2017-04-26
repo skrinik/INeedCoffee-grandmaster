@@ -308,7 +308,7 @@ function createFSQMarkerList(link) {
             '<p><span class="title">' + marker.title + '</span>' +
             '<br />' + chainDisplay +
             '<br />' + 'You are ' + distanceConversion(marker.distance) + ' miles away.' +
-            '<br /> <a class="fsq-link" href="http://foursquare.com/v/' + marker.venueId +
+            '<br /> <a class="fsq-link" href="https://foursquare.com/v/' + marker.venueId +
             '" target="_blank">See on Foursquare</a></p>' +
             '</div>';
           largeInfowindow.setContent(contentString);
@@ -351,7 +351,7 @@ function createFSQMarkerList(link) {
 // function from the Google Maps API course:
 function makeMarkerIcon(markerColor) {
   var markerImage = new google.maps.MarkerImage(
-    'http://chart.googleapis.com/chart?chst=d_map_spin&chld=1.15|0|' + markerColor +
+    'https://chart.googleapis.com/chart?chst=d_map_spin&chld=1.15|0|' + markerColor +
     '|40|_|%E2%80%A2',
     new google.maps.Size(21, 34),
     new google.maps.Point(0, 0),
